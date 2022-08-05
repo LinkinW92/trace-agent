@@ -1,5 +1,14 @@
 # Trace Agent
 
-日志追踪javaagent，配合Feign使用，对日志框架进行增强，实现服务间链路日志。
+A javaagent for logs advanced.This agent will automatically append a "tid"(Trace ID for a request)
+after each log output.What you need to do is just config your SpringCloud microservice,
+and then add this agent to you application, just like:
+#### -javaagent:/usr/local/env/trace-agent-0.0.1.RELEASE.jar=traceroot=com.xxx.TraceInterceptor
+
+The "traceroot" parameter tells the agent how to get a "tid" from current running context.
+
+
+
+
 
 

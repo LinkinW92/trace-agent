@@ -14,9 +14,8 @@ public class JavaAgent {
 
     public static void premain(String agentArgs, Instrumentation instrumentation) {
         System.out.println("agentArgs:" + agentArgs);
-        String[] args = agentArgs.split(",");
         Map<String, String> params = new HashMap<>(8);
-        if (null != agentArgs) {
+        if (null != agentArgs.split(",")) {
             for (String arg : agentArgs.split(",")) {
                 if (null != arg) {
                     String[] pairs = arg.split("=");
